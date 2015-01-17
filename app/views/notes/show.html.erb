@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @note.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @note.description %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @note.subject.title %>
+</p>
+
+<p>
+  <strong>Faculty:</strong>
+  <%= @note.faculty.email %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @note.department.name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @note.attachment.url %>
+</p>
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>

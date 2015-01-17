@@ -1,0 +1,2 @@
+class FaucultyDashboardController < ApplicationController
+end
