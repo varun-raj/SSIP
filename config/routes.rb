@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  root 'home#index'
+  get 'home/index'
+
+  get 'home/notes', as: "notes"
+
+  get 'home/classroom', ad: "classroom"
+
+  get 'home/notice_board'
+
   resources :complaints
 
   get 'dashboard/index'

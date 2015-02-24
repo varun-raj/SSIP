@@ -8,6 +8,9 @@
 </head>
 <body>
 
+<% if student_signed_in? %>
+<%= render "shared/header_student" %>
+<%end %>
 <%= yield %>
 
 </body>

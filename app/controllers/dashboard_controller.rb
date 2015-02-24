@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
   def index
 
 
-    if student_signed_in?
+    if admin_signed_in?
       
     end
   end

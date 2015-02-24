@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150112170036) do
+ActiveRecord::Schema.define(version: 20150215124515) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 20150112170036) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "complaint_types", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "complaints", force: :cascade do |t|
     t.string   "title",            limit: 255
     t.text     "description",      limit: 65535
@@ -44,13 +50,6 @@ ActiveRecord::Schema.define(version: 20150112170036) do
     t.integer  "complainttype_id", limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
-  end
-
-  create_table "complainttypes", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.string   "description", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
   end
 
   create_table "departments", force: :cascade do |t|
@@ -103,6 +102,10 @@ ActiveRecord::Schema.define(version: 20150112170036) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "regno",                  limit: 255
+    t.string   "name",                   limit: 255
+    t.integer  "department_id",          limit: 4
+    t.integer  "batch",                  limit: 4
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
